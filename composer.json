@@ -1,0 +1,29 @@
+{
+  "name": "nicodinus/amphp-storage_service",
+  "homepage": "https://github.com/nicodinus/amphp-storage_service",
+  "description": "",
+  "type": "lib",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nicodinus",
+      "email": "nicodinus@yandex.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Nicodinus\\StorageService\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "amphp/amp": "^2.6",
+	"amphp/file": "~2.0",
+	"dflydev/dot-access-data": "^3.0"
+  },
+  "require-dev": {
+    "larapack/dd": "^1.1"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
