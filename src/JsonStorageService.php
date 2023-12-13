@@ -9,6 +9,10 @@ use Dflydev\DotAccessData\Data;
 
 class JsonStorageService extends AbstractFileStorage
 {
+    use ArrayAccessStorageTrait;
+
+    //
+
     /** @var JsonSerializer */
     private JsonSerializer $jsonSerializer;
 
@@ -18,7 +22,7 @@ class JsonStorageService extends AbstractFileStorage
     //
 
     /**
-     * JsonStorage constructor.
+     * JsonStorageService constructor.
      */
     public function __construct()
     {
@@ -84,38 +88,5 @@ class JsonStorageService extends AbstractFileStorage
     {
         $this->inMemoryData->set($key, $value);
         Promise\rethrow($this->forceSync());
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function offsetExists($offset): bool
-    {
-        return $this->has($offset);
-    }
-
-    /**
-     * @inheritDoc
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->get($offset);
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function offsetSet($offset, $value): void
-    {
-        $this->update($offset, $value);
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function offsetUnset($offset): void
-    {
-        $this->remove($offset);
     }
 }

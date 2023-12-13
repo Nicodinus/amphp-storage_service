@@ -17,12 +17,15 @@
   },
   "require": {
     "php": ">=7.4",
-    "amphp/amp": "^2.6",
-	"amphp/file": "~2.0",
 	"dflydev/dot-access-data": "^3.0"
   },
   "require-dev": {
-    "larapack/dd": "^1.1"
+    "larapack/dd": "^1.1",
+    "amphp/amp": "^2.6",
+    "amphp/file": "~2.0"
+  },
+  "suggest": {
+    "amphp/amp": "Required for file storage"
   },
   "minimum-stability": "dev",
   "prefer-stable": true
