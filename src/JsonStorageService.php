@@ -24,7 +24,7 @@ class JsonStorageService extends AbstractFileStorage
     /**
      * JsonStorageService constructor.
      */
-    public function __construct()
+    protected function __construct()
     {
         parent::__construct();
 
